@@ -6,13 +6,11 @@ class ProfileTableSeeder extends Seeder {
 		$profiles = [
 		     [
 		         'user_id' => 1,
-		         'gender'  => 'm',
 		         'location'    => 'SYD',
 		     ],
 		     [
 		         'user_id' => '2',
-		         'gender'  => 'f',
-		         'location'    => 'SYD',
+		         'location'    => 'MEL',
 		     ]
 		 ];
 		 DB::table('profiles')->insert($profiles);
