@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration {
 			$table->timestamps();
 			// constraints
             $table->foreign('user_id')
-                  ->references('id')->on('users');
+                  ->references('id')->on('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
 		});
