@@ -7,7 +7,8 @@
 				<img src="{{ $data['photo_url'] }}">
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-			{{ Form::open(['route' => 'user.postProfile']) }}
+			{{ Form::open(['route' => 'user.postProfile', 'files' => true]) }}
+				<input type="hidden" name="user_id" value= {{ $data['user_id'] }}>
 				<div class="form-group">
 					{{ Form::text('first_name', $data['first_name'], ['class' => 'form-control', 'placeholder' => 'First Name']) }}
 					{{ Form::text('last_name', $data['last_name'], ['class' => 'form-control', 'placeholder' => 'Last Name']) }}
@@ -19,7 +20,8 @@
 					{{ Form::text('location', $data['location'], ['class' => 'form-control', 'placeholder' => '']) }}
 				</div>
 				<div class="form-group">
-					<input type="radio">
+					{{ Form::label('file', 'Avatar', ['id'=>'','class'=>'']) }}
+					{{ Form::file('avatar', '', ['id'=>'','class'=>'']) }}
 				</div>
 		
 				<button type="submit" class="btn btn-primary btn-login">Update</button>

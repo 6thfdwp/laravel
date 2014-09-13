@@ -24,8 +24,8 @@
 				{{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Enter email']) }}
 			</div>
 			<div class="form-group">
-				{{ Form::label('password', 'Password', ['class'=>'control-label'])}}
-				{{ Form::password('password', null, ['class' => 'form-control', 'placeholder' => 'Password']) }}
+				{{-- Form::label('password', 'Password', ['class'=>'control-label']) --}}
+				{{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) }}
 			</div>
 			<button type="submit" class="btn btn-primary btn-login">Sign up</button>
 		{{ Form::close() }}
