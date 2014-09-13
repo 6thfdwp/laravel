@@ -2,6 +2,11 @@
 
 @section('content')
 	<div class="container">
+		<ul>
+			@foreach( $errors->all() as $message )
+				<li> {{ $message }}</li>
+			@endforeach
+		</ul>
 		<div class="row">
 			<div class="col-sm-3 col-md-2">
 				<img src="{{ $data['photo_url'] }}">

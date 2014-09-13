@@ -22,7 +22,15 @@ class UserController extends BaseController {
         $user_id = Input::get('user_id');
         $file = Input::file('avatar');
         // $filename = $file ? $file->getClientOriginalName()
-
+        $rules = [
+            'first_name'=> 'required',
+            'last_name' => 'required',
+            'avatar'    => 'mimes:jpeg,png'
+        ];
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::route('user.getProfile', $user_id)->withErrors($validator);
+        }
         $u = User::find($user_id);
         $user_profile = $u->profile;
         $u->first_name = Input::get('first_name');
