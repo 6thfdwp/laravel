@@ -1,6 +1,8 @@
 /vendor
 /report
 /public/img/avatar
+/nodejs/node_modules
+#/public/js/socket.io-client
 composer.phar
 composer.lock
 .DS_Store

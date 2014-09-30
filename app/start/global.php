@@ -77,7 +77,16 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
-
 require app_path().'/filters.php';
+
+// login event to trigger redis publish
+require app_path().'/events.php';
+// Event::listen('auth.login', function($user) {
+// 	$redis = Redis::connection();
+// 	// $redis->set('u'.$user->id, $user->email);
+// 	$redis->info();
+// 	$redis->publish('auth.login', $user);
+// });
+
 // temporary
 require_once app_path('logger.php');

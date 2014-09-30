@@ -9,6 +9,9 @@ class AuthController extends BaseController {
             'password' => Input::get('password')
         );
         if (Auth::attempt($params)) {
+            $user = Auth::user();
+            Event::fire('auth.login', array($user) );
+            // Session::put($userid, Input::get('username'));
             return Redirect::route('home');
         } else {
             return Redirect::route('home')
