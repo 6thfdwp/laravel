@@ -21,5 +21,4 @@ rdiclient.on('message', function(channel, data) {
 io.on('connection', function(client) {
 	console.info(client.id + ' connected');
 
-	
 });

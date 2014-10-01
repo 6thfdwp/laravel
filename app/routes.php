@@ -15,6 +15,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@getIndex']);
 
 Route::post('login', ['as' => 'auth.postLogin', 'uses' => 'AuthController@postLogin']);
 Route::get('logout', ['as' => 'auth.getLogout', 'uses' => 'AuthController@getLogout']);
+// Route::get('signup', ['as' => 'auth.getSignup', 'uses' => 'AuthController@getSignup']);
 Route::post('signup', ['as' => 'auth.postSignup', 'uses' => 'AuthController@postSignup']);
 
 Route::get('user/profile/{user_id}', ['as' => 'user.getProfile', 'uses' => 'UserController@getProfile']);

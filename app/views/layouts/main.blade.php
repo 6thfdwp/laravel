@@ -20,9 +20,6 @@
     	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
     	{{ HTML::script('//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js') }}
 
-        {{ HTML::script( asset('js/socket.io-client/socket.io.js') ) }}
-        {{ HTML::script( asset('js/chat.main.js') ) }}
-    	<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    	<!--script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+        {{ HTML::script( asset('js/vendor/jquery.cookie.js') ) }}
     </body>
 </html>

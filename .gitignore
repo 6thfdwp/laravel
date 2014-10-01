@@ -2,6 +2,8 @@
 /report
 /public/img/avatar
 /nodejs/node_modules
+/bower_components
+/app/storage/debugbar
 #/public/js/socket.io-client
 composer.phar
 composer.lock

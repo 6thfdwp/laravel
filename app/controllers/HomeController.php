@@ -22,8 +22,12 @@ class HomeController extends BaseController {
 
     public function getIndex()
     {
-        return View::make('home.index');
-        //return View::make('layouts.main');
+    	if (Auth::check()) {
+	        return View::make('home.index');
+    	}
+    	else {
+    		return View::make('user.signup');
+    	}
     }
 
 }
