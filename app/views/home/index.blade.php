@@ -22,7 +22,7 @@
     	{{ HTML::script('//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js') }}
         {{ HTML::script( asset('js/vendor/jquery.cookie.js') ) }}
 
-        {{ HTML::script( asset('js/socket.io-client/socket.io.js') ) }}
-        {{ HTML::script( asset('js/chat.main.js') ) }}
+        {{-- HTML::script( asset('js/socket.io-client/socket.io.js') ) --}}
+        {{-- HTML::script( asset('js/chat.main.js') ) --}}
     </body>
 </html>

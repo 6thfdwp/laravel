@@ -30,4 +30,15 @@ class HomeController extends BaseController {
     	}
     }
 
+    public function getChat()
+    {
+        $me = array('id' => Auth::user()->id,
+            'first_name' => Auth::user()->first_name,
+            'email' => Auth::user()->email);
+        return View::make('home.chat')->with('me', $me);
+        //return View::composer('home.chat', function($view) {
+            //$view->with('Me', Auth::user());
+        //});
+    }
+
 }

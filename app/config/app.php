@@ -125,6 +125,7 @@ return array(
 
 		'Barryvdh\Debugbar\ServiceProvider',
 
+		'Klap\Providers\RepositoryServiceProvider'
 	),
 
 	/*

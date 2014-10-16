@@ -20,6 +20,7 @@ Route::post('signup', ['as' => 'auth.postSignup', 'uses' => 'AuthController@post
 
 Route::get('user/profile/{user_id}', ['as' => 'user.getProfile', 'uses' => 'UserController@getProfile']);
 Route::post('user/profile', ['as' => 'user.postProfile', 'uses' => 'UserController@postProfile']);
+Route::get('chat', ['as' => 'chat', 'uses' => 'HomeController@getChat']);
 
 //Event::listen('illuminate.query', function($query)
 //{

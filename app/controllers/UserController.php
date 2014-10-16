@@ -1,20 +1,37 @@
 <?php
 //namespace controllers;
 
+use Klap\Repositories\UserRepoInterface;
+
 class UserController extends BaseController {
+
+    /**
+     * User repository.
+     *
+     * @var \Klap\Repositories\UserRepositoryInterface
+     */    
+    protected $userRepo;
+
+    public function __construct(UserRepoInterface $urepo)
+    {
+        parent::__construct();
+
+        $this->userRepo = $urepo;
+    }
+
     public function getProfile($userId) {
-        // get user
-        $u = User::find($userId);
-        $user_profile = $u->profile;
-        $avatar = $u->photo_url ? $u->photo_url : 'default-user-avatar.jpeg';
-        $data = [ 'user_id' => $userId,
-            'first_name' => Auth::user()->first_name,
-            'last_name'  => $u->last_name,
-            'email'    => Auth::user()->email, 
-            'location' => $user_profile->location,
-            'photo_url'=> url("img/avatar/$avatar")
-        ];
+        //$u = User::find($userId);
+        //$user_profile = $u->profile;
+        //$avatar = $u->photo_url ? $u->photo_url : 'default-user-avatar.jpeg';
+        //$data = [ 'user_id' => $userId,
+            //'first_name' => Auth::user()->first_name,
+            //'last_name'  => $u->last_name,
+            //'email'    => Auth::user()->email, 
+            //'location' => $user_profile->location,
+            //'photo_url'=> url("img/avatar/$avatar")
+        //];
         //return View::make('user.profile', $data);
+        $data = $this->userRepo->getUserProfile($userId);
         return View::make('user.profile')->with('data', $data);
     }
 
